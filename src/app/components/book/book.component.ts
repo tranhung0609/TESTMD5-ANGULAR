@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Book} from "../../models/book";
 import {BookService} from "../../services/book.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-book',
@@ -44,12 +45,13 @@ export class BookComponent implements OnInit {
   }
 
   getAllBooks() {
-    this.bookService.getAllBooks().subscribe(data => this.books == data);
+    this.bookService.getAllBooks().subscribe(data => {this.books = data});
+
     this.formBook?.reset();
-    // @ts-ignore
-    // document.getElementById('#form-create').hidden = true
     // // @ts-ignore
-    // document.getElementById('#form-delete').hidden =true
+    // document.getElementById('#form-create').hidden = true;
+    // // @ts-ignore
+    // document.getElementById('#form-update').hidden =true;
   }
 
   getBook(id: number) {
@@ -97,12 +99,12 @@ export class BookComponent implements OnInit {
     });
   }
 
-  // deleteBook(id: any, title: any) {
-  //   if (confirm('Are you sure you want to delete book: ' + title + ' ?')) {
-  //     this.bookService.deleteBook(id).subscribe(() => {
-  //       alert('Delete Successfully');
-  //       this.getAllBooks();
-  //     });
-  //   }
-  // }
+  deleteBook(id: any, title: any) {
+    if (confirm('Are you sure you want to delete book: ' + title + ' ?')) {
+      this.bookService.deleteBook(id).subscribe(() => {
+        alert('Delete Successfully');
+        this.getAllBooks();
+      });
+    }
+  }
 }

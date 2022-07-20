@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Book} from "../models/book";
+import {environment} from "../../environments/environment";
 
-const API_URL = 'http://localhost:3001/books'
+const API_URL = environment.apiUrl
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +30,9 @@ export class BookService {
     return this.httpClient.put(`${API_URL}/${id}`, book);
   }
 
-  // deleteBook(id: number): Observable<any> {
-  //   return this.httpClient.delete<any>(API_URL + '/' + id);
-  // }
+  deleteBook(id: number): Observable<any> {
+    return this.httpClient.delete<any>(API_URL + '/' + id);
+  }
 
 
 }

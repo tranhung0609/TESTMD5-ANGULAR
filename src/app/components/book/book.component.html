@@ -111,8 +111,8 @@
         <a [routerLink]="['/detail', book.id]"><ins>{{book.title}}</ins></a>
       </td>
       <td>{{book.author}}</td>
-<!--      <td (click)="editBook(book.id)"><i class="fa-solid fa-pen-to-square"></i></td>-->
-<!--      <td (click)="deleteBook(book.id, book.title)"><i class="fa-solid fa-trash-can"></i></td>-->
+      <td (click)="editBook(book.id)"><i class="fa-solid fa-pen-to-square"></i></td>
+      <td (click)="deleteBook(book.id, book.title)"><i class="fa-solid fa-trash-can"></i></td>
     </tr>
     </tbody>
   </table>
