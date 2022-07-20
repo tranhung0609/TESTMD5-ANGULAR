@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BookComponent
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: DetailComponent
   }
 ];

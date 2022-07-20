@@ -48,10 +48,10 @@ export class BookComponent implements OnInit {
     this.bookService.getAllBooks().subscribe(data => {this.books = data});
 
     this.formBook?.reset();
-    // // @ts-ignore
-    // document.getElementById('#form-create').hidden = true;
-    // // @ts-ignore
-    // document.getElementById('#form-update').hidden =true;
+    // @ts-ignore
+    document.getElementById('form-create').hidden = false;
+    // @ts-ignore
+    document.getElementById('form-update').hidden =true;
   }
 
   getBook(id: number) {
