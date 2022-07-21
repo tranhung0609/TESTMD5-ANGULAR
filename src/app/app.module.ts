@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { BookComponent } from './components/book/book.component';
-import { DetailComponent } from './components/detail/detail.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    DetailComponent
+
   ],
   imports: [
     BrowserModule,
